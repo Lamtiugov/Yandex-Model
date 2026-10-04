@@ -1,6 +1,5 @@
 package ru.yandex.praktikum.model.constants;
 
-// Может быть и красным и зеленым
 public class Colour {
     private String red = "";  //красный пердмет
     private String green = "";//зеленый пердмет
