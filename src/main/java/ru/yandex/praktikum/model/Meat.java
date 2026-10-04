@@ -1,8 +1,14 @@
-package ru.yandex.praktikum.service;
+//package ru.yandex.praktikum.model.constants;
+//package ru.yandex.praktikum.model.service;
 package ru.yandex.praktikum.model;
 
 public class Meat extends Food {
-    Meat(double amount, int price) {
+    private int amount;
+    private double price;
+    boolean isVegetarian = false;
+
+
+    Meat(int amount, double price) {
         this.amount = amount;
         this.price = price;
         boolean isVegetarian = false;
@@ -13,4 +19,3 @@ public class Meat extends Food {
         return 0.0;
     }
 }
-

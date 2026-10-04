@@ -1,19 +1,21 @@
 package ru.yandex.praktikum.model;
+package ru.yandex.praktikum.model.constants.*;
 
-import java.util.Objects;
+public class Apple extends Food, Apple{
+//    String colour = "";
+//        this.amount = amount;
+//        this.price = price;
+//        this.colour = ;
 
-public class Apple extends Food{
-    String colour = "";
     Apple(int amount, double price, String colour) {
         this.amount = amount;
         this.price = price;
         this.colour = colour;
-        isVegetarian = true;
     }
 
     @Override
     public double getDiscount() {
-        if (Objects.equals(colour, "red")) {
+        if (Apple.isRed)) {
             return 60.0;
         }
         else {
