@@ -1,17 +1,25 @@
 package ru.yandex.praktikum;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import ru.yandex.praktikum.model.Apple;
+import ru.yandex.praktikum.model.Food;
+import ru.yandex.praktikum.model.Meat;
+import ru.yandex.praktikum.model.constants.Colour;
+import ru.yandex.praktikum.model.service.ShoppingCart;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how OpenIDE suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Meat meat = new Meat(5,  100.0);
+        Apple redApple = new Apple(10, 50, Colour.red);
+        Apple greenApple = new Apple(8, 60, Colour.green);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        ShoppingCart shoppingCart = new ShoppingCart(3);
+
+        shoppingCart.foods[0] = meat;
+        shoppingCart.foods[1] = redApple;
+        shoppingCart.foods[2] = greenApple;
+
+        System.out.println(shoppingCart.total());
+        System.out.println(shoppingCart.totalWithDiscount());
+        System.out.println(shoppingCart.totalForVegetarian());
     }
 }

@@ -1,19 +1,42 @@
 package ru.yandex.praktikum.model.service;
+
 import ru.yandex.praktikum.model.Food;
+import ru.yandex.praktikum.model.Meat;
+import ru.yandex.praktikum.model.Apple;
 
 public class ShoppingCart extends Food {
-    private final Food[] foods;
+    public Food[] foods;
+    private int count;
 
-    public ShoppingCart(Food[] foods) {
-        this.foods = foods;
+    public ShoppingCart(int count) {
+        this.foods = new Food[count];
+        this.count = count;
     }
 
-    //@Override Food
-    public double getDiscountSum() {
-        double sum = 0;
+    public double total() {
+        double sum = 0.0;
         for (int i = 0; i < foods.length; i++) {
-            sum = foods[i].getDiscount() * foods[i].price;
+            sum = sum + foods[i].getPrice() * foods[i].getAmount();
         }
-
         return sum;
     }
+
+    public double totalWithDiscount() {
+
+        double sum = 0.0;
+        for (int i = 0; i < foods.length; i++) {
+            sum = sum + foods[i].getPrice() * foods[i].getDiscount() * foods[i].getAmount();
+        }
+        return sum;
+    }
+
+    public double totalForVegetarian() {
+        double sum = 0.0;
+        for (int i = 0; i < foods.length; i++) {
+            if (foods[i].isVegetarian()) {
+                sum = sum + foods[i].getPrice() * foods[i].getAmount();
+            }
+        }
+        return sum;
+    }
+}
