@@ -25,7 +25,7 @@ public class ShoppingCart extends Food {
 
         double sum = 0.0;
         for (int i = 0; i < foods.length; i++) {
-            sum = sum + foods[i].getPrice() * foods[i].getDiscount() * foods[i].getAmount();
+            sum = sum + foods[i].getPrice() * (1 - foods[i].getDiscount()) * foods[i].getAmount();
         }
         return sum;
     }

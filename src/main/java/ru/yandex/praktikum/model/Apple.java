@@ -15,12 +15,12 @@ public class Apple extends Food {
     @Override
     public double getDiscount() {
         if (this.colour.equals(Colour.red)) {
-            return 1 - 0.60;
+            return 0.60;
         }
         else if (this.colour.equals(Colour.green)) {
-            return 1.0;
+            return 0.0;
         }
-        else return 1.0;
+        else return 0.0;
     }
 
     @Override

@@ -23,5 +23,4 @@ public abstract class Food implements Discountable {
     public boolean isVegetarian() {
         return isVegetarian;
     }
-
 }

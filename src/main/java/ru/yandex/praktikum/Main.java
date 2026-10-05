@@ -8,6 +8,7 @@ import ru.yandex.praktikum.model.service.ShoppingCart;
 
 public class Main {
     public static void main(String[] args) {
+        // Купили продуктов
         Meat meat = new Meat(5,  100.0);
         Apple redApple = new Apple(10, 50, Colour.red);
         Apple greenApple = new Apple(8, 60, Colour.green);
