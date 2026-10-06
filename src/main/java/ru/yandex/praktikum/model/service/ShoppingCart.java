@@ -1,16 +1,12 @@
 package ru.yandex.praktikum.model.service;
 
 import ru.yandex.praktikum.model.Food;
-import ru.yandex.praktikum.model.Meat;
-import ru.yandex.praktikum.model.Apple;
 
 public class ShoppingCart extends Food {
     public Food[] foods;
-    private int count;
 
     public ShoppingCart(int count) {
         this.foods = new Food[count];
-        this.count = count;
     }
 
     public double total() {
@@ -22,10 +18,10 @@ public class ShoppingCart extends Food {
     }
 
     public double totalWithDiscount() {
-
         double sum = 0.0;
         for (int i = 0; i < foods.length; i++) {
-            sum = sum + foods[i].getPrice() * (1 - foods[i].getDiscount()) * foods[i].getAmount();
+            double discount = (100 - foods[i].getDiscount()) / 100;
+            sum = sum + foods[i].getPrice() * discount * foods[i].getAmount();
         }
         return sum;
     }

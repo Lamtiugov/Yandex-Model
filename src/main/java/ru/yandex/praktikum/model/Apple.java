@@ -1,6 +1,7 @@
 package ru.yandex.praktikum.model;
 
 import ru.yandex.praktikum.model.constants.Colour;
+import ru.yandex.praktikum.model.constants.Discount;
 
 public class Apple extends Food {
     String colour;
@@ -14,13 +15,10 @@ public class Apple extends Food {
 
     @Override
     public double getDiscount() {
-        if (this.colour.equals(Colour.red)) {
-            return 0.60;
+        if (this.colour.equals(Colour.RED)) {
+            return Discount.RED_APPLE_DISCOUNT;
         }
-        else if (this.colour.equals(Colour.green)) {
-            return 0.0;
-        }
-        else return 0.0;
+        else return Discount.NO_DISCOUNT;
     }
 
     @Override
